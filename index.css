@@ -1,0 +1,30 @@
+#choose{
+    display: flex;
+    justify-content: center;
+}
+#choose div{
+    border: solid black 1px;
+    background-color: rgba(136, 94, 94, 0.671) ;
+    font-size: 30px;
+}
+.row{
+    display: flex; 
+}
+.board{
+    margin-left: 3em;
+    width: 450px;
+    width: 450px;
+    color: white;
+    background-color: rgba(56, 56, 110, 0.705);
+}
+.row div{
+    border: solid black 2px;
+    justify-items: center;
+    width: 150px;
+    height: 150px;
+}
+.my-h1{
+    font-size: 64px;
+    margin-top: 30px;
+    margin-left: 40px;
+}
