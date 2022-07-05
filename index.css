@@ -1,65 +1,187 @@
+.col-5 {
+  width: 50%;
+  display: flex;
+  /* text-align: center; */
+  height: 100%;
+}
 
-.col-5 {width: 
-    50%; 
-    text-align: center;
-    height: 100%;
+.score-image{
+  height: 50px;
+  width: 50px;
+  margin-top: 10px;
 }
 .col-6 {
-    width: 50%; 
-    height: 50px; 
-    margin-left: 25%; 
-    display: flex;
-    margin-bottom: 1em;
+  width: 50%;
+  height: 50px;
+  margin-left: 25%;
+  display: flex;
+  margin-bottom: 1em;
+  color: rgb(3, 85, 110);
 }
+
 .col-8 {
-    width: 66.66%; 
-    height: 100px; 
-    margin-left: 16.66%;
-    display: flex;
+  width: 66.66%;
+  height: 100px;
+  margin-left: 16.66%;
+  display: flex;
 }
-.col-4{
-    width: 33%;
+
+.col-4 {
+  width: 33%;
 }
 
 [class*="col-"] {
-    float: left;
+  float: left;
+  cursor: pointer;
+}
+
+.col-br {
+  width: 33%;
+
+  border-bottom: 8px inset rgb(3, 85, 110);
+  border-right: 8px solid rgb(3, 85, 110);
+
+}
+
+.col-b {
+  width: 33%;
+  border-bottom: 8px solid rgb(3, 85, 110);
+}
+
+.col-r {
+  width: 33%;
+  border-right: 8px solid rgb(3, 85, 110);
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.my-h1 {
+  font-size: 2px;
+}
+
+.mrs {
+  width: 75px;
+  height: 75px;
+}
+
+body {
+  justify-items: center;
+  background-image: url('./images/phone.png');
+}
+
+.end {
+  position: absolute;
+  justify-content: center;
+  width: 66.66%;
+  height: 300px;
+  margin-left: 1%;
+  top: 80px;
+  z-index: -1;
+}
+
+.end-image {
+  width: 200px;
+  height: 200px;
+}
+.winner{
+  width: 200px;
+  height: 200px;
+  margin-left: 40%;
+}
+
+.guys {
+  display: flex;
+}
+
+.ref {
+  width: 75px;
+  height: 75px;
+  margin-top: 75px;
+}
+
+.wow {
+  border-radius: 15px;
+  background-color: rgba(83, 83, 126, 0.63);
+  width: 70%;
+  text-align: center;
+  margin-left: 35%;
+  color: aliceblue;
+  font-size: 24px;
+  font-family: k2d;
+
+}
+
+.again {
+  background-color: rgb(139, 4, 4);
+  color: white;
+  font-size: 16px;
+  width: 35%;
+  text-align: center;
+  font-family: k2d;
+  cursor: pointer;
+  margin-left: 55%;
+
+}
+
+.again h2 {
+  padding: 2px;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
   }
-  .col-br{
+
+  100% {
+    opacity: 0.3;
+  }
+}
+@keyframes zoom {
+  0%{transform: scale(1);}
+  25%{transform: scale(1.2);}
+  50%{transform: scale(1.5);}
+  75%{transform: scale(1.2);}
+  100%{transform: scale(1);}
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    background-image: url('./images/background.png');
+  }
+
+  .col-8 {
     width: 33%;
-   
-    border-bottom:8px inset rgb(3, 85, 110) ;
-    border-right: 8px solid rgb(3, 85, 110);
-    
+    margin-left: 38%;
   }
-  .col-b{
-    width: 33%;
-    border-bottom:8px solid rgb(3, 85, 110)  ;
+
+  .mrs {
+    width: 100px;
+    height: 100px;
   }
-  .col-r{
-    width: 33%;
-    border-right:8px solid rgb(3, 85, 110)  ;
+  .col-5{
+    width: 16.66%;
   }
-  .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  } .my-h1{
-    font-size: 2px;
+  .col-6{
+    width: 40%;
+    margin-left:50% ;
+    margin-bottom: 3em;
   }
-  .mrs{
-    width: 75px;
-    height: 75px;
+  .wow{
+    width: 30%;
+    margin-left: 65%;
   }
-  body{
-    justify-items: center;
-    background-image: url('./images/phone.png');
+  .winner{
+    margin-left: 70%;
   }
-  @media only screen and (min-width: 768px) {
-    body{background-image: url('./images/background.png');}
-    .col-8{width: 33%; margin-left:38% ;}
-    .mrs{
-      width: 100px;
-      height: 100px;
-    }
+  .again{
+    width: 16.66%;
+    margin-left: 70%;
   }
- 
+  .guys{
+    margin-left: 55%;
+  }
+}
