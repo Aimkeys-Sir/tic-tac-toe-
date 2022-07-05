@@ -1,3 +1,4 @@
+const board=document.querySelector(".row")
 const options = {
     method: 'GET',
     headers: {
@@ -44,14 +45,18 @@ function isAwin(state,turn)
     }
 }
 async function computerTurn(state, turn) {
+    console.log(board.style.pointerEvents)
+    board.style.pointerEvents="none"
     await fetch(`https://stujo-tic-tac-toe-stujo-v1.p.rapidapi.com//${state}/${turn}`, options)
         .then(response => response.json())
         .then(response => {
             console.log(response)
             inputCell("O",cells[response.recommendation],"O")
+
         })
         .catch(err => console.error(err));
         if(isAwin(whatState(),"O")) return isAwin(whatState(),"O")
+        board.style.pointerEvents=""
 }
 function whatState() {
     let state=''
