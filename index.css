@@ -26,27 +26,40 @@
   }
   .col-br{
     width: 33%;
-    border-bottom:3px solid rgb(5, 209, 245) ;
-    border-right: 3px solid rgb(5, 209, 245); 
+   
+    border-bottom:8px inset rgb(3, 85, 110) ;
+    border-right: 8px solid rgb(3, 85, 110);
+    
   }
   .col-b{
     width: 33%;
-    border-bottom:3px solid rgb(5, 209, 245) ;
+    border-bottom:8px solid rgb(3, 85, 110)  ;
   }
   .col-r{
     width: 33%;
-    border-right:3px solid rgb(5, 209, 245) ;
+    border-right:8px solid rgb(3, 85, 110)  ;
   }
   .row::after {
     content: "";
     clear: both;
     display: table;
+  } .my-h1{
+    font-size: 2px;
+  }
+  .mrs{
+    width: 75px;
+    height: 75px;
   }
   body{
     justify-items: center;
-    background-image: url('./images/background-phone.png');
+    background-image: url('./images/phone.png');
   }
   @media only screen and (min-width: 768px) {
     body{background-image: url('./images/background.png');}
-    .col-8{width: 33%; margin-left:33% ;}
+    .col-8{width: 33%; margin-left:38% ;}
+    .mrs{
+      width: 100px;
+      height: 100px;
+    }
   }
+ 

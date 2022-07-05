@@ -48,7 +48,7 @@ async function computerTurn(state, turn) {
         .then(response => response.json())
         .then(response => {
             console.log(response)
-            inputCell("O",cells[response.recommendation])
+            inputCell("O",cells[response.recommendation],"O")
         })
         .catch(err => console.error(err));
         if(isAwin(whatState(),"O")) return isAwin(whatState(),"O")
@@ -68,21 +68,25 @@ function whatState() {
 
 
 function onClick(e) { 
-     debugger
+
     if(e.target.firstChild) return
     if(thereIsWin) return
   
     //if(isAwin(whatState(),"O")) return isAwin(whatState(),"O")
-    inputCell("X",e.target)
+    inputCell("X",e.target,"tar")
     if(isAwin(whatState(),"X")) return isAwin(whatState(),"X")
     computerTurn(whatState(),"O")
 }
-function inputCell(input,target)
+function inputCell(input,target,mrs)
 {
     const h1 = document.createElement('h1')
+    const image=document.createElement('img')
+    image.className="mrs"
+    image.src=`./images/mrs${mrs}.png`
     h1.className = "my-h1"
      h1.innerText = input
-     target.append(h1)
+
+     target.append(h1,image)
 }
 // async function exeOrO() {
 //     let choice
