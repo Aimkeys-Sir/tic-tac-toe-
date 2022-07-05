@@ -1,30 +1,52 @@
-#choose{
+
+.col-5 {width: 
+    50%; 
+    text-align: center;
+    height: 100%;
+}
+.col-6 {
+    width: 50%; 
+    height: 50px; 
+    margin-left: 25%; 
     display: flex;
-    justify-content: center;
+    margin-bottom: 1em;
 }
-#choose div{
-    border: solid black 1px;
-    background-color: rgba(136, 94, 94, 0.671) ;
-    font-size: 30px;
+.col-8 {
+    width: 66.66%; 
+    height: 100px; 
+    margin-left: 16.66%;
+    display: flex;
 }
-.row{
-    display: flex; 
+.col-4{
+    width: 33%;
 }
-.board{
-    margin-left: 3em;
-    width: 450px;
-    width: 450px;
-    color: white;
-    background-color: rgba(56, 56, 110, 0.705);
-}
-.row div{
-    border: solid black 2px;
+
+[class*="col-"] {
+    float: left;
+  }
+  .col-br{
+    width: 33%;
+    border-bottom:3px solid rgb(5, 209, 245) ;
+    border-right: 3px solid rgb(5, 209, 245); 
+  }
+  .col-b{
+    width: 33%;
+    border-bottom:3px solid rgb(5, 209, 245) ;
+  }
+  .col-r{
+    width: 33%;
+    border-right:3px solid rgb(5, 209, 245) ;
+  }
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  body{
     justify-items: center;
-    width: 150px;
-    height: 150px;
-}
-.my-h1{
-    font-size: 64px;
-    margin-top: 30px;
-    margin-left: 40px;
-}
+    background-image: url('./images/background-phone.png');
+  }
+  @media only screen and (min-width: 768px) {
+    body{background-image: url('./images/background.png');}
+    .col-8{width: 33%; margin-left:33% ;}
+  }

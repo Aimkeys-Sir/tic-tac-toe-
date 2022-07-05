@@ -6,25 +6,52 @@ const options = {
     }
 };
 
-///A function to put X's and O's on the board and map them
-///this function should receive a number and type of input(X or O)
-
-///A funtion to check a winner
-///checks if there are three X's or O's diagonally, horizontally and vertically
-
-const cells = document.getElementsByClassName("cell")
+const tictacwins=['147','123','258','369','456','789','159','357']
+let thereIsWin=false
+let cells=[]
+for(let i=1;i<10;i++)
+{
+cells.push(document.getElementById(`${i}`))
+}
+console.log(cells)
 for (let i = 0; i < 9; i++) {
     cells[i].addEventListener("click", onClick)
 }
-function computerTurn(state, turn) {
-    fetch(`https://stujo-tic-tac-toe-stujo-v1.p.rapidapi.com//${state}/${turn}`, options)
+function isAwin(state,turn)
+{
+    if(!state.split("").find(empty=>empty==="-") && !thereIsWin)
+    {
+        console.log("its a draw")
+         return "It's a draw"
+    }
+    let form=""
+    for(let i=0;i<9;i++){
+        if(state.split("")[i]==turn)
+        {
+            form +=`${i+1}`
+        }
+    }
+   let win=tictacwins.find(aForm=>aForm===form)
+    if(win)
+    {
+        thereIsWin=true
+        console.log(`${turn} Wins!!`)
+        return `${turn} Wins!!`
+    }
+    else{
+        console.log(`${turn} not yet!`)
+        return false
+    }
+}
+async function computerTurn(state, turn) {
+    await fetch(`https://stujo-tic-tac-toe-stujo-v1.p.rapidapi.com//${state}/${turn}`, options)
         .then(response => response.json())
         .then(response => {
             console.log(response)
             inputCell("O",cells[response.recommendation])
-            
         })
         .catch(err => console.error(err));
+        if(isAwin(whatState(),"O")) return isAwin(whatState(),"O")
 }
 function whatState() {
     let state=''
@@ -40,9 +67,14 @@ function whatState() {
 }
 
 
-function onClick(e) {
+function onClick(e) { 
+     debugger
     if(e.target.firstChild) return
+    if(thereIsWin) return
+  
+    //if(isAwin(whatState(),"O")) return isAwin(whatState(),"O")
     inputCell("X",e.target)
+    if(isAwin(whatState(),"X")) return isAwin(whatState(),"X")
     computerTurn(whatState(),"O")
 }
 function inputCell(input,target)
