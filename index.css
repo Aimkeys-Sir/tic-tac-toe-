@@ -79,7 +79,7 @@ body {
   width: 66.66%;
   height: 300px;
   margin-left: 1%;
-  top: 80px;
+  top: 70px;
   z-index: -1;
 }
 
@@ -104,14 +104,15 @@ body {
 }
 
 .wow {
-  border-radius: 15px;
-  background-color: rgba(83, 83, 126, 0.63);
-  width: 70%;
+  width: 80%;
+  border-radius: 12px;
   text-align: center;
   margin-left: 35%;
-  color: aliceblue;
-  font-size: 24px;
-  font-family: k2d;
+  margin-bottom: 0;
+  color: white;
+  background-color: rgb(3, 85, 110);
+  font-size: 30px;
+  font-family: guerrilla;
 
 }
 
@@ -124,11 +125,14 @@ body {
   font-family: k2d;
   cursor: pointer;
   margin-left: 55%;
+  height: 35px;
 
 }
-
+.again:hover{
+  background-color: rgb(3, 85, 110);
+}
 .again h2 {
-  padding: 2px;
+  padding: 12px;
 }
 
 @keyframes fade-out {
@@ -175,11 +179,11 @@ body {
     margin-left: 65%;
   }
   .winner{
-    margin-left: 70%;
+    margin-left: 35%;
   }
   .again{
     width: 16.66%;
-    margin-left: 70%;
+    margin-left: 72%;
   }
   .guys{
     margin-left: 55%;

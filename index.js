@@ -19,9 +19,16 @@ let cells = []
 for (let i = 1; i < 10; i++) {
     cells.push(document.getElementById(`${i}`))
 }
-console.log(cells)
 for (let i = 0; i < 9; i++) {
     cells[i].addEventListener("click", onClick)
+}
+function clearBoard(){
+    cells.forEach(cell=>cell.innerHTML="")
+    end.innerHTML=""
+    end.style.zIndex="-1"
+    board.style.opacity="1"
+    thereIsDraw=false
+    thereIsWin=false
 }
 function endGame(win,turn,form) {
     const guys = document.createElement("div")
@@ -34,7 +41,7 @@ function endGame(win,turn,form) {
     const againText = document.createElement("h3")
     againText.innerText = "Play Again"
     again.append(againText)
-    //again.addEventListener('click', clearBoard)
+    again.addEventListener('click', clearBoard)
     again.className = "again"
     if (win) {
         form=form.split("")
